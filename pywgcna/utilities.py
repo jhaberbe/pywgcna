@@ -1,6 +1,6 @@
 import numpy as np
 import seaborn as sns
-from gprofiler import GProfiler
+from gprofiler import gprofiler
 
 def labels_to_hex_colors(labels):
     unique_labels = np.unique(labels)
