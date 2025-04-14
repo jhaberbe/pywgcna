@@ -26,9 +26,3 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest", "black"]
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
-[tool.setuptools]
-package-dir = {"" = "src"}
