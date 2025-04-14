@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 import sklearn.cluster
 from sklearn.metrics import calinski_harabasz_score
 
@@ -10,10 +11,11 @@ def spectral_clustering_method(TOM: np.array) -> np.array:
     best_n_clusters = None
     best_labels = None
 
-    for n_clusters in range(2, 21):  # Iterating over possible cluster counts
+    for n_clusters in tqdm(range(2, 21)):  # Iterating over possible cluster counts
         spectral_clustering.set_params(n_clusters=n_clusters)
         labels = spectral_clustering.fit_predict(TOM)
         score = calinski_harabasz_score(TOM, labels)
+        print(n_clusters, score)
         
         if score > best_score:
             best_score = score
