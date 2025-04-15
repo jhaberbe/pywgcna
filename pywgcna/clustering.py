@@ -5,7 +5,7 @@ import sklearn.cluster
 from sklearn.metrics import calinski_harabasz_score
 
 def spectral_clustering_method(TOM: np.array) -> np.array:
-    spectral_clustering = sklearn.cluster.SpectralClustering(n_clusters=8, affinity="precomputed", assign_labels="discretize")
+    spectral_clustering = sklearn.cluster.SpectralClustering(n_clusters=8, affinity="precomputed", assign_labels="discretize", random_state=42069)
 
     best_score = -1
     best_n_clusters = None
